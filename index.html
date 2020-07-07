@@ -1,33 +1,74 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
         <meta content="utf-8" http-equiv="encoding">
-        <title>SNAX™</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        
-        <script>
-            function show(shown, hidden) {
-              document.getElementById(shown).style.display='block';
-              document.getElementById(hidden).style.display='none';
-              return false;
-            }
-        </script>
-
+        <title>SNAX™ Portal</title>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="w3.js"></script> 
+        <link rel="shortcut icon" href="images/SNAXtm.png"/>
     </head>
 
+    <body>
+        <script>
+            document.body.classList.add('fade');
+        </script>
 
+        <div w3-include-html="header.html"></div> 
 
-    <div class="navbar">
-        <a href="index.html">Nucleus</a>
-        <a href="pages/articles.html">Circular</a>
-        <a href="pages/projections.html">Projections</a>
-        <a href="pages/about.html">About</a>   
-    
-    </div> 
+        <script>
+            w3.includeHTML();
+        </script>
+        
+        <div id="welcome">
+            <h2>
+                You have reached the SNAX™ Web Portal
+            </h2>
+        </div>
 
+        <div id="welcome2">
+            <h2 id="countdown"></h2>
 
+            <script>
+                // Set the date we're counting down to
+                var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+                
+                // Update the count down every 1 second
+                var x = setInterval(function() {
+                
+                  // Get today's date and time
+                  var now = new Date().getTime();
+                
+                  // Find the distance between now and the count down date
+                  var distance = countDownDate - now;
+                
+                  // Time calculations for days, hours, minutes and seconds
+                  var seconds = Math.floor(distance / 1000);
+                
+                  // Display the result in the element with id="demo"
+                  document.getElementById("countdown").innerHTML = "Please do not panic for another " + seconds + " seconds";
+                
+                  // If the count down is finished, write some text
+                  if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "Panic.";
+                  }
+                }, 1000);
+            </script>
+        </div>
+        
+        
+        
+        <div id="welcome3">
+            <h2>
+                You may select an option from the presiding navigation bar
+            </h2>
+        </div>
+        
 
-
+    </body>
 
 
 
