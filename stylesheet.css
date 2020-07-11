@@ -8,6 +8,7 @@ body {
   align-self: center;
   align-items: center ;
   margin: 0 auto;
+  background-color: rgb(255, 255, 255);
 }
 
 body.fade {
@@ -21,7 +22,7 @@ h1 {
     font-weight: normal;
     line-height: 1;
     text-align: center;
-    margin-bottom: 12rem;
+    margin-bottom: 15rem;
     font-family: Eras-Bold-ITC,Century Gothic, sans-serif;
     font-weight: bold;
 
@@ -101,10 +102,12 @@ button:hover{
     overflow: hidden;
     background-color: rgb(0, 0, 0);
     top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
+    width: 97%; /* Full width */
     position: fixed;
-    margin: 0px auto;
-    z-index:1000
+    left: 50%;
+    transform: translateX(-50%);
+    z-index:1000;
+    border: double white 20px;
 }
   
   /* Links inside the navbar */
@@ -121,8 +124,8 @@ button:hover{
   
   /* Change background on mouse-over */
 .navbar a:hover {
-    background: #ddd;
-    color: black;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .navbar-centered a {
@@ -139,6 +142,11 @@ button:hover{
   float: right;
 }
 
+.element-bordered {
+  border-width: 8px;
+  border-style: solid;
+  border-color: #000000
+}
 #welcome {
   opacity: 1;
   animation: fadeinout1 1s ease-in-out forwards;
