@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html class="noscrollbarthing">
     <head>
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
         <meta content="utf-8" http-equiv="encoding">
@@ -23,6 +23,9 @@
             w3.includeHTML();
         </script>
 
+        <h2>
+            About:
+        </h2>
         <div id="welcome">
             <h3 class="element-bordered">
                 Who are we?
@@ -50,6 +53,40 @@
                 3: Convert all material resources on earth into SNAX
                 <br>
                 The lack of this objective is a cardinal sin
+                <br>
+                
+                <p2 id="progress_percent" style="color:white; background-color: black; font-size: 50px;"></p2>
+
+                <script>
+                    // Set the date we're counting down to
+                    var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+                    
+                    // Update the count down every 1 second
+                    var x = setInterval(function() {
+                    
+                      // Get today's date and time
+                      var now = new Date().getTime();
+                    
+                      // Find the distance between now and the count down date
+                      var distance = countDownDate - now;
+                    
+                      // Time calculations for days, hours, minutes and seconds
+                      var seconds = Math.floor(distance / 1000);
+                    
+
+                      var percent = seconds/30000000 * 100;
+
+                      percent = 100 - Math.round(percent * 100000) / 100000;
+                      // Display the result in the element with id="demo"
+                      document.getElementById("progress_percent").innerHTML = "Progress: " + percent + "%";
+                    
+                      // If the count down is finished, write some text
+                      if (seconds < 0) {
+                        clearInterval(x);
+                        document.getElementById("progress_percent").innerHTML = "Panic.";
+                      }
+                    }, 1000);
+                </script>
             </p2>
         </div>
         

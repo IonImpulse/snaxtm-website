@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head class="noscrollbarthing">
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
         <meta content="utf-8" http-equiv="encoding">
         <title>SNAX™ Portal</title>
@@ -51,7 +51,7 @@
                   document.getElementById("countdown").innerHTML = "Please do not panic for another " + seconds + " seconds";
                 
                   // If the count down is finished, write some text
-                  if (distance < 0) {
+                  if (seconds < 0) {
                     clearInterval(x);
                     document.getElementById("countdown").innerHTML = "Panic.";
                   }
