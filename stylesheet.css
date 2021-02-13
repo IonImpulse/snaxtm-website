@@ -412,7 +412,13 @@ button.p-add {
   transition: color 1s;
   border: #000000 solid 10px;
 }
+
 .congrats:hover {
   color: #51ff00;
   background-color: #000000;
+}
+
+.coupon-holder {
+  margin: 0 auto;
+  width: 20vw;
 }
