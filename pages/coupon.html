@@ -16,14 +16,69 @@
             document.body.classList.add('fade');
         </script>
 
+        <div class="coupon-scrollers 3"></div>
 
-        <div class="scrolling-left"></div>
+        <div class="congrats">C O N G R A T U L A T I O N S</div>
 
+        <div class="coupon-scrollers 3"></div>
 
-        <script>
-            w3.includeHTML();
-        </script>
+        <div class="congrats">YOU WON A COUPON</div>
 
-        <div class="scrolling-right"></div>
+        <div class="coupon-scrollers 3"></div>
+
+        <div class="congrats">SCROLL DOWN TO RECEIVE IT</div>
+
+        <div class="coupon-scrollers 30"></div>
+        
+        <div>
+            <img src="https://snaxtm.com/images/snax-tm-coupon.png"></img>
+        </div>
     </body>
+
+    <script>
+        w3.includeHTML();
+        const coupon_scrollers = document.getElementsByClassName("coupon-scrollers");
+
+        for (coupon of coupon_scrollers) {
+            let times = parseInt(coupon.classList[1]);
+            let output = ``;
+            for (let i = 0; i < times; i++) {
+                output += `
+                <div class="outer">
+                    <div>
+                        <div class="loop"><div class="content">COUPON &nbsp;</div></div>
+                    </div>
+                </div>
+                
+                `;
+            }
+
+            coupon.innerHTML = output;
+        }
+
+        let outer = document.getElementsByClassName("outer");
+        
+        for (let elem = 0; elem < outer.length; elem++) {
+
+            let content = outer[elem].getElementsByClassName('content')[0];
+            
+            repeatContent(content, outer[elem].offsetWidth);
+            
+            let el = outer[elem].getElementsByClassName('loop')[0];
+            
+            el.innerHTML = el.innerHTML + el.innerHTML;
+        }
+
+        
+
+        function repeatContent(el, till) {
+            let html = el.innerHTML;
+            let counter = 0; // prevents infinite loop
+            
+            while (el.offsetWidth < till && counter < 100) {
+                el.innerHTML += html;
+                counter += 1;
+            }
+        }
+    </script>
 </html>

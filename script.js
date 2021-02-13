@@ -32,6 +32,6 @@ function checkPassword() {
 
     if (hashed_value == 2032989608) {
         // Simulate a mouse click:
-        window.location.href = "https://snaxtm.com/pages/coupon.html";
+        window.location.href = "/pages/coupon.html";
     }
 }
