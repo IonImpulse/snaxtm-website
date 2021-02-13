@@ -419,6 +419,11 @@ button.p-add {
 }
 
 .coupon-holder {
-  margin: 0 auto;
-  width: 20vw;
+  display: flex;
+  justify-content: center;
+}
+
+#coupon {
+  width:40vw;
+  margin: 50px auto;
 }
